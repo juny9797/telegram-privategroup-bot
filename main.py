@@ -46,18 +46,18 @@ MESSAGE = """
 
 BUTTONS = InlineKeyboardMarkup([
     [
-        InlineKeyboardButton("📘 운영정책", url="https://t.me/your_policy_url"),
-        InlineKeyboardButton("💰 에스크로", url="https://t.me/your_escrow_url")
+        InlineKeyboardButton("📘 운영정책", url="https://t.me/privateO2C"),
+        InlineKeyboardButton("💰 에스크로", url="https://t.me/privatePrimeOTC")
     ],
     [
-        InlineKeyboardButton("✉️ private건의사항", url="https://t.me/your_suggestion_url")
+        InlineKeyboardButton("✉️ private건의사항", url="https://t.me/privatebot12")
     ]
 ])
 
 # 키워드 자동 응답
 async def keyword_trigger(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    message_text = update.message.text.lower()
-    if "업자" in message_text:
+    message_text = update.message.text.lower().strip()
+    if message_text == "업자":
         with open(GIF_PATH, 'rb') as gif:
             await context.bot.send_animation(
                 chat_id=TARGET_CHAT_ID,
