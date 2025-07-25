@@ -43,9 +43,9 @@ MESSAGE = """
 
 BUTTONS = InlineKeyboardMarkup([
     [
-        InlineKeyboardButton("📘 운영정책", url="https://t.me/your_policy_url"),
-        InlineKeyboardButton("💰 에스크로", url="https://t.me/your_escrow_url"),
-        InlineKeyboardButton("✉️ private건의사항", url="https://t.me/your_suggestion_url")
+        InlineKeyboardButton("📘 운영정책", url="https://t.me/privateO2C"),
+        InlineKeyboardButton("💰 에스크로", url="https://t.me/privatePrimeOTC"),
+        InlineKeyboardButton("✉️ private건의사항", url="https://t.me/privatebot12")
     ]
 ])
 
@@ -87,8 +87,8 @@ async def send_loop():
 async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), keyword_trigger))
-    asyncio.create_task(auto_sender())
+    asyncio.create_task(send_loop())
     await app.run_polling()
 
 if __name__ == "__main__":
-    asyncio.run(send_loop())
+    asyncio.run(main())
