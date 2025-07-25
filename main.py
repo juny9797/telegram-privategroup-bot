@@ -1,8 +1,11 @@
 import asyncio
 import datetime
+import nest_asyncio
 from telegram import Bot, Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 from telegram.constants import ParseMode
+
+nest_asyncio.apply()
 
 BOT_TOKEN = "8490843979:AAGmlhJEqSA-6wTpBNZ3neaWdHwt64TQy9M"
 TARGET_CHAT_ID = "-1002518172704"
