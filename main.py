@@ -49,7 +49,7 @@ BUTTONS = InlineKeyboardMarkup([
     ]
 ])
 
-# 키워드 자동 응답 (업자)
+# 키워드 자동 응답
 async def keyword_trigger(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message_text = update.message.text.lower()
     if "업자" in message_text:
@@ -62,15 +62,13 @@ async def keyword_trigger(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 reply_markup=BUTTONS
             )
 
-# 5시간마다 자동 전송
+# 주기적 전송 루프
 async def send_loop(bot: Bot):
     print("✅ 봇 실행됨 - 5시간 간격 메시지 전송 시작")
-
     while True:
         try:
             now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             print(f"📤 [{now}] 메시지 전송 중...")
-
             with open(GIF_PATH, 'rb') as gif:
                 await bot.send_animation(
                     chat_id=TARGET_CHAT_ID,
@@ -79,28 +77,21 @@ async def send_loop(bot: Bot):
                     parse_mode=ParseMode.HTML,
                     reply_markup=BUTTONS
                 )
-
             print(f"✅ [{now}] 메시지 전송 완료")
         except Exception as e:
             print(f"❌ 오류 발생: {e}")
-
         await asyncio.sleep(18000)  # 5시간
 
 # 메인 실행
 async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), keyword_trigger))
-
-    # 봇 객체로 루프 실행
     bot = Bot(token=BOT_TOKEN)
     asyncio.create_task(send_loop(bot))
-
-    print("📡 봇 폴링 시작됨")
+    print("📡 봇 폴링이 시작되었습니다")
     await app.run_polling()
 
-# Railway 실행
+# 실행부 (Python 3.12 대응)
 if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except RuntimeError as e:
-        print(f"❗ RuntimeError 발생: {e}")
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
