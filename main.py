@@ -40,6 +40,26 @@ MESSAGE = """
 ▫️<a href="https://t.me/c/2518172704/5279">private</a>▫️<a href="https://t.me/c/2518172704/5279">동맹제휴</a>
 """
 
+BUTTONS = InlineKeyboardMarkup([
+    [
+        InlineKeyboardButton("📘 운영정책", url="https://t.me/your_policy_url"),
+        InlineKeyboardButton("💰 에스크로", url="https://t.me/your_escrow_url"),
+        InlineKeyboardButton("✉️ private건의사항", url="https://t.me/your_suggestion_url")
+    ]
+])
+
+async def keyword_trigger(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    message_text = update.message.text.lower()
+    if "업자" in message_text:
+        with open(GIF_PATH, 'rb') as gif:
+            await context.bot.send_animation(
+                chat_id=TARGET_CHAT_ID,
+                animation=gif,
+                caption=MESSAGE,
+                parse_mode=ParseMode.HTML,
+                reply_markup=BUTTONS
+            )
+
 async def send_loop():
     bot = Bot(token=BOT_TOKEN)
     print("✅ 봇 실행됨 - 5시간 간격 메시지 전송 시작")
