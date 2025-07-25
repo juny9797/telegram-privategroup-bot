@@ -83,5 +83,11 @@ async def send_loop():
 
         await asyncio.sleep(18000)  # 5시간
 
-if __name__ == "__main__":
-    asyncio.run(send_loop())
+async def main():
+    app = ApplicationBuilder().token(BOT_TOKEN).build()
+    app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), keyword_trigger))
+    asyncio.create_task(auto_sender())
+    await app.run_polling()
+
+if name == "main":
+    asyncio.run(main())
