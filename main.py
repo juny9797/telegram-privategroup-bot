@@ -47,7 +47,9 @@ MESSAGE = """
 BUTTONS = InlineKeyboardMarkup([
     [
         InlineKeyboardButton("📘 운영정책", url="https://t.me/your_policy_url"),
-        InlineKeyboardButton("💰 에스크로", url="https://t.me/your_escrow_url"),
+        InlineKeyboardButton("💰 에스크로", url="https://t.me/your_escrow_url")
+    ],
+    [
         InlineKeyboardButton("✉️ private건의사항", url="https://t.me/your_suggestion_url")
     ]
 ])
