@@ -4,7 +4,7 @@ from telegram import Bot
 from telegram.constants import ParseMode
 
 BOT_TOKEN = "8490843979:AAGmlhJEqSA-6wTpBNZ3neaWdHwt64TQy9M"
-TARGET_CHAT_ID = "@-1002518172704"
+TARGET_CHAT_ID = "-1002518172704"
 GIF_PATH = "private.mp4"
 
 MESSAGE = """
