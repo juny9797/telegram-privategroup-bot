@@ -11,6 +11,9 @@ BOT_TOKEN = "8490843979:AAGmlhJEqSA-6wTpBNZ3neaWdHwt64TQy9M"
 TARGET_CHAT_ID = "-1002518172704"
 GIF_PATH = "private.mp4"
 
+with open(GIF_PATH, "rb") as f:
+    gif_bytes = f.read()
+
 MESSAGE = """
 ▫️<a href="https://t.me/c/2518172704/5257">구인</a>▫️<a href="https://t.me/c/2518172704/5257">구직</a>▫️<a href="https://t.me/c/2518172704/5257">모집</a>▫️
 ▫️<a href="https://t.me/c/2518172704/5258">토토</a>▫️<a href="https://t.me/c/2518172704/5258">카지노</a>▫️<a href="https://t.me/c/2518172704/5258">홀덤</a>▫️
