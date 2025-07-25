@@ -1,6 +1,7 @@
 import asyncio
 import datetime
 import nest_asyncio
+from io import BytesIO
 from telegram import Bot, Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 from telegram.constants import ParseMode
