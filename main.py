@@ -90,5 +90,5 @@ async def main():
     asyncio.create_task(auto_sender())
     await app.run_polling()
 
-if name == "main":
-    asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(send_loop())
