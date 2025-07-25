@@ -61,7 +61,7 @@ async def keyword_trigger(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 reply_markup=BUTTONS
             )
 
-async def send_loop():
+async def send_loop(app):
     bot = Bot(token=BOT_TOKEN)
     print("✅ 봇 실행됨 - 5시간 간격 메시지 전송 시작")
 
@@ -75,20 +75,33 @@ async def send_loop():
                     chat_id=TARGET_CHAT_ID,
                     animation=gif,
                     caption=MESSAGE,
-                    parse_mode=ParseMode.HTML
+                    parse_mode=ParseMode.HTML,
+                    reply_markup=BUTTONS
                 )
 
             print(f"✅ [{now}] 메시지 전송 완료")
         except Exception as e:
             print(f"❌ 오류 발생: {e}")
 
-        await asyncio.sleep(18000)  # 5시간
+        await asyncio.sleep(18000)
 
 async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), keyword_trigger))
-    asyncio.create_task(send_loop())
-    await app.run_polling()
 
+    # 5시간 전송 루프 실행
+    asyncio.create_task(send_loop(app))
+
+    # run_polling은 대기
+    await app.initialize()
+    await app.start()
+    print("📡 봇 폴링 시작됨")
+    await app.updater.start_polling()
+    await app.updater.idle()
+
+# Railway 환경에서는 아래처럼 실행
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.get_event_loop().run_until_complete(main())
+    except RuntimeError as e:
+        print(f"❗ RuntimeError 발생: {e}")
