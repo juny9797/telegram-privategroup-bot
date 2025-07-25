@@ -57,18 +57,18 @@ BUTTONS = InlineKeyboardMarkup([
     ]
 ])
 
-# 키워드 자동 응답
+# ▶️ "업자" 정확히 입력한 경우에만 발송
 async def keyword_trigger(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    message_text = update.message.text.lower().strip()
-    if message_text == "업자":
-        with open(GIF_PATH, 'rb') as gif:
-            await context.bot.send_animation(
-                chat_id=TARGET_CHAT_ID,
-                animation=gif,
-                caption=MESSAGE,
-                parse_mode=ParseMode.HTML,
-                reply_markup=BUTTONS
-            )
+    if update.message.text.strip() == "업자":
+        gif_io = BytesIO(gif_bytes)
+        gif_io.name = "private.mp4"
+        await context.bot.send_animation(
+            chat_id=update.effective_chat.id,
+            animation=gif_io,
+            caption=MESSAGE,
+            parse_mode=ParseMode.HTML,
+            reply_markup=BUTTONS
+        )
 
 # 주기적 전송 루프
 async def send_loop(bot: Bot):
