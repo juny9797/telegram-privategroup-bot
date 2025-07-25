@@ -8,19 +8,19 @@ TARGET_CHAT_ID = "-1002518172704"
 GIF_PATH = "private.mp4"
 
 MESSAGE = """
-▫️<a href="https://t.me/c/2694135929/17">구인</a>▫️<a href="https://t.me/c/2694135929/17">구직</a>▫️<a href="https://t.me/c/2694135929/17">모집</a>▫️
-▫️<a href="https://t.me/c/2694135929/17">토토</a>▫️<a href="https://t.me/c/2518172704/5258">카지노</a>▫️<a href="https://t.me/c/2694135929/17">홀덤</a>▫️
+▫️<a href="https://t.me/c/2518172704/5257">구인</a>▫️<a href="https://t.me/c/2518172704/5257">구직</a>▫️<a href="https://t.me/c/2518172704/5257">모집</a>▫️
+▫️<a href="https://t.me/c/2518172704/5258">토토</a>▫️<a href="https://t.me/c/2518172704/5258">카지노</a>▫️<a href="https://t.me/c/2518172704/5258">홀덤</a>▫️
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-▫️<a href="https://t.me/c/2694135929/17">코인대행</a>▫️<a href="https://t.me/c/2518172704/5259">OTC업체</a>▫️<a href="https://t.me/c/2694135929/17"> </a>
+▫️<a href="https://t.me/c/2518172704/5259">코인대행</a>▫️<a href="https://t.me/c/2518172704/5259">OTC업체</a>▫️<a href="https://t.me/c/2518172704/5259"> </a>
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-▫️<a href="https://t.me/c/2694135929/17">종합</a>▫️<a href="https://t.me/c/2518172704/5260">마케팅</a>▫️<a href="https://t.me/c/2694135929/17">홍보관련</a>
-▫️<a href="https://t.me/c/2694135929/17">디자인</a>▫️<a href="https://t.me/c/2518172704/5261">포토샾</a>▫️<a href="https://t.me/c/2694135929/22">영상</a>
-▫️<a href="https://t.me/c/2694135929/17">인증</a>▫️<a href="https://t.me/c/2518172704/5262">국내/해외</a>▫️<a href="https://t.me/c/2694135929/17">계정</a>
-▫️<a href="https://t.me/c/2694135929/17">텔레그램</a>▫️<a href="https://t.me/c/2518172704/5263">전문</a>▫️<a href="https://t.me/c/2694135929/17">업자</a>
-▫️<a href="https://t.me/c/2694135929/17">상위노출</a>▫️<a href="https://t.me/c/2518172704/5264">SEO</a>▫️<a href="https://t.me/c/2694135929/17">트레픽</a>
-▫️<a href="https://t.me/c/2694135929/17">대리결제</a>▫️<a href="https://t.me/c/2518172704/5265">카드결제</a>▫️<a href="https://t.me/c/2694135929/26"> </a>
+▫️<a href="https://t.me/c/2518172704/5260">종합</a>▫️<a href="https://t.me/c/2518172704/5260">마케팅</a>▫️<a href="https://t.me/c/2518172704/5260">홍보관련</a>
+▫️<a href="https://t.me/c/2518172704/5261">디자인</a>▫️<a href="https://t.me/c/2518172704/5261">포토샾</a>▫️<a href="https://t.me/c/2518172704/5261">영상</a>
+▫️<a href="https://t.me/c/2518172704/5262">인증</a>▫️<a href="https://t.me/c/2518172704/5262">국내/해외</a>▫️<a href="https://t.me/c/2518172704/5262">계정</a>
+▫️<a href="https://t.me/c/2518172704/5263">텔레그램</a>▫️<a href="https://t.me/c/2518172704/5263">전문</a>▫️<a href="https://t.me/c/2518172704/5263">업자</a>
+▫️<a href="https://t.me/c/2518172704/5264">상위노출</a>▫️<a href="https://t.me/c/2518172704/5264">SEO</a>▫️<a href="https://t.me/c/2518172704/5264">트레픽</a>
+▫️<a href="https://t.me/c/2518172704/5265">대리결제</a>▫️<a href="https://t.me/c/2518172704/5265">카드결제</a>▫️<a href="https://t.me/c/2518172704/5265"> </a>
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-▫️<a href="https://t.me/c/2694135929/17">웹개발</a>▫️<a href="https://t.me/c/2518172704/5266">솔루션</a>▫️<a href="https://t.me/c/2694135929/17">프로그램</a>
+▫️<a href="https://t.me/c/2518172704/5266">웹개발</a>▫️<a href="https://t.me/c/2518172704/5266">솔루션</a>▫️<a href="https://t.me/c/2518172704/5266">프로그램</a>
 ▫️<a href="https://t.me/c/2518172704/5267">유심</a>▫️<a href="https://t.me/c/2518172704/5267">라우터</a>▫️<a href="https://t.me/c/2518172704/5267">에그</a>
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 ▫️<a href="https://t.me/c/2518172704/5268">유입전문</a>▫️<a href="https://t.me/c/2518172704/5268">퍼미션</a>▫️<a href="https://t.me/c/2518172704/5268">콜센터</a>
