@@ -5,7 +5,7 @@ from telegram.constants import ParseMode
 
 BOT_TOKEN = "8490843979:AAGmlhJEqSA-6wTpBNZ3neaWdHwt64TQy9M"
 TARGET_CHAT_ID = "@-1002518172704"
-GIF_PATH = "private.gif"
+GIF_PATH = "private.mp4"
 
 MESSAGE = """
 ▫️<a href="https://t.me/c/2694135929/17">구인</a>▫️<a href="https://t.me/c/2694135929/17">구직</a>▫️<a href="https://t.me/c/2694135929/17">모집</a>▫️
