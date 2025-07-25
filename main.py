@@ -63,5 +63,5 @@ async def send_loop():
 
         await asyncio.sleep(18000)  # 5시간
 
-if name == "__main__":
+if __name__ == "__main__":
     asyncio.run(send_loop())
