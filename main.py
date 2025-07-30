@@ -5,12 +5,19 @@ from io import BytesIO
 from telegram import Bot, Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 from telegram.constants import ParseMode
+import os
+from dotenv import load_dotenv
+
+# ✅ .env 파일 로드
+load_dotenv()
 
 nest_asyncio.apply()
 
-BOT_TOKEN = "8490843979:AAGmlhJEqSA-6wTpBNZ3neaWdHwt64TQy9M"
-TARGET_CHAT_ID = "-1002518172704"
-GIF_PATH = "private.mp4"
+# ✅ 환경변수에서 값 불러오기
+BOT_TOKEN = os.getenv("8490843979:AAGmlhJEqSA-6wTpBNZ3neaWdHwt64TQy9M")
+TARGET_CHAT_ID = os.getenv("-1002518172704")
+GIF_PATH = os.getenv("private.mp4")
+
 
 with open(GIF_PATH, "rb") as f:
     gif_bytes = f.read()
