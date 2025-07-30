@@ -14,9 +14,9 @@ load_dotenv()
 nest_asyncio.apply()
 
 # ✅ 환경변수에서 값 불러오기
-BOT_TOKEN = os.getenv("8490843979:AAGmlhJEqSA-6wTpBNZ3neaWdHwt64TQy9M")
-TARGET_CHAT_ID = os.getenv("-1002518172704")
-GIF_PATH = os.getenv("private.mp4")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+TARGET_CHAT_ID = os.getenv("TARGET_CHAT_ID")
+GIF_PATH = os.getenv("GIF_PATH")
 
 
 with open(GIF_PATH, "rb") as f:
