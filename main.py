@@ -18,10 +18,11 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 TARGET_CHAT_ID = os.getenv("TARGET_CHAT_ID")
 GIF_PATH = os.getenv("GIF_PATH")
 
-
+# GIF 파일 로드
 with open(GIF_PATH, "rb") as f:
     gif_bytes = f.read()
 
+# 메시지 내용
 MESSAGE = """
 ▫️<a href="https://t.me/c/2518172704/5257">구인</a>▫️<a href="https://t.me/c/2518172704/5257">구직</a>▫️<a href="https://t.me/c/2518172704/5257">모집</a>▫️
 ▫️<a href="https://t.me/c/2518172704/5258">토토</a>▫️<a href="https://t.me/c/2518172704/5258">카지노</a>▫️<a href="https://t.me/c/2518172704/5258">홀덤</a>▫️
@@ -55,6 +56,7 @@ MESSAGE = """
 ▫️<a href="https://t.me/c/2518172704/5279">private</a>▫️<a href="https://t.me/c/2518172704/5279">동맹제휴</a>
 """
 
+# 인라인 버튼
 BUTTONS = InlineKeyboardMarkup([
     [
         InlineKeyboardButton("📘 운영정책", url="https://t.me/privateO2C"),
@@ -65,7 +67,7 @@ BUTTONS = InlineKeyboardMarkup([
     ]
 ])
 
-# ▶️ "업자" 정확히 입력한 경우에만 발송
+# ▶️ "업자" 정확히 입력한 경우 발송
 async def keyword_trigger(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.message.text.strip() == "업자":
         gif_io = BytesIO(gif_bytes)
@@ -78,7 +80,7 @@ async def keyword_trigger(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=BUTTONS
         )
 
-# 주기적 전송 루프
+# 5시간 간격 메시지 전송
 async def send_loop(bot: Bot):
     print("✅ 봇 실행됨 - 5시간 간격 메시지 전송 시작")
     while True:
@@ -103,11 +105,10 @@ async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), keyword_trigger))
     bot = Bot(token=BOT_TOKEN)
-    asyncio.create_task(send_loop(bot))
-    print("📡 봇 폴링이 시작되었습니다")
-    await app.run_polling()
+    await asyncio.gather(
+        app.run_polling(),
+        send_loop(bot)
+    )
 
-# 실행부 (Python 3.12 대응)
 if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
+    asyncio.run(main())
